@@ -17,12 +17,19 @@ var todoList = {
 			this.displayTodos();
 		},
 
-	deleteTodos: function(position) {
-		this.todos.splice(position, 1);
-		this.displayTodos();
-	}
+		toggleCompleted: function(position) {
+			var todo = this.todos[position];
+			todo.completed = !todo.completed;
+			this.displayTodos();
+		},
+
+		deleteTodos: function(position) {
+			this.todos.splice(position, 1);
+			this.displayTodos();
+		}
 };
 
 todoList.addTodos('walk the dog');
 todoList.addTodos('drink milk');
 todoList.changeTodos(0, 'walk the husband');
+todoList.toggleCompleted(0);
