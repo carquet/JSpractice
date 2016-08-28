@@ -1,7 +1,19 @@
 var todoList = {
 		todos: [],
 		displayTodos: function() {
-		console.log('my todos', this.todos);
+			if (this.todos.length === 0){
+				console.log('Your todo list is empty');
+			} else {
+				console.log('My todos list is: ')
+					for (var i = 0; i < this.todos.length; i++){
+						if (this.todos[i].completed === true) {
+							console.log('(x)', this.todos[i].todoText);
+						} else {
+							console.log('( )', this.todos[i].todoText);
+						}
+					
+			}
+		};
 	},
 		addTodos: function(text){ 
 			this.todos.push({
@@ -28,3 +40,10 @@ var todoList = {
 			this.displayTodos();
 		}
 };
+
+
+todoList.addTodos("walk the dog");
+todoList.toggleCompleted(0)
+todoList.displayTodos
+//todoList.addTodos("drink whisky");
+//todoList.addTodos("throw myself through the window")
