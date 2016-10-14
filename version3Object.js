@@ -44,7 +44,7 @@ var todosList = {
 };
 
 
-//5. add a method that delete a todo
+//5. add a method that delete a todo. See function in version 2
 var todosList = {
   todos: ['item 1', 'item 2', 'item 3'],
   displayTodos: function(){
