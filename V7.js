@@ -65,13 +65,13 @@ var todosList = {
 
 //access to button
 var displayTodos = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById("toggleAll");
 
 
 displayTodos.addEventListener('click', function(){
   todosList.displayTodos();
 });
 
-var toggleAllButton = document.getElementById("toggleAll");
 
 toggleAllButton.addEventListener('click', function(){
   todosList.toggleAll();
