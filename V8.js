@@ -64,12 +64,35 @@ var todosList = {
 };
 
 //REFACTORING : we want the method of this object to handle whatever is done inside of this object- give values to onclick attr
+//instead of adding event to each click, give a method as the ID to the button.
 var handlers = {
   displayTodos: function(){
     todosList.displayTodos();
   },
   toggleAll: function(){
     todosList.toggleAll();
+  },
+  addTodo: function(){
+    var addTodoTextInput= document.getElementById("addTodoTextInput");
+    todosList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = "";
+  },
+  changeTodo: function(){
+    var changeTodoPositionInput = document.getElementById("changeTodoPositionInput");
+    var changeTodoTextInput = document.getElementById("changeTodoTextInput");
+    todosList.changeTodo(changeTodoPositionInput.valueAsNumber,changeTodoTextInput.value);
+    changeTodoPositionInput.value = "";
+    changeTodoTextInput.value = "";
+  },
+  deleteTodo: function(){
+    var deleteTodoPosition = document.getElementById('deleteTodosPositionInput');
+    todosList.deleteTodo(deleteTodoPosition.value);
+    deleteTodoPosition.value='';
+  },
+  toggleCompleted: function(){
+    var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todosList.toggleCompleted(toggleCompletedPositionInput.value);
+    toggleCompletedPositionInput.value='';
   }
 };
 
